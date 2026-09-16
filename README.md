@@ -32,13 +32,8 @@ Naive substring matching on Chinese text runs into a surprising number of failur
 |---|---|---|
 | `104_single_file.py` | ✅ **Primary, actively used** | Self-contained, no internal imports required. Takes one county/month's cleaned Excel file and outputs the wide-format skill match result |
 | `104_run_all_months.py` | ✅ Main batch pipeline | Runs all counties across all months in one pass. Contains matching logic largely mirroring `104_single_file.py`, though the two currently require manual syncing |
-| `104_test_single_file.py` | Reference only | An earlier single-file test wrapper that imports `104_run_all_months.py`; functionally overlapping with the two files above |
-| `fix_existing_output.py` | Reference only | Post-hoc column-level patching of already-generated long-format parquet files (dedup, short-token removal) without re-running the match |
-| `104_batch_monthly.py`, `104_skills_long.py`, `104_skills_wide.py` | ⚠️ **Deprecated** | Pre-dates the current lexicon version; wide-format output still uses the old "specialized/common skill" binary split rather than the current 9-category system. Logic has diverged from the active pipeline |
-| `repair_202601_wide.py` | ⚠️ One-off script | Written to repair corrupted output for a specific month (Jan 2026); not a general-purpose tool |
-| `translate_lexicon.py` | ⚠️ Historical | Used to machine-translate an earlier lexicon version (v9→v10); the lexicon has since progressed to v13 |
 
-> **In practice, only `104_single_file.py` is needed.** The other files are kept for development history; the deprecated/one-off ones are candidates for future cleanup.
+> Earlier development scripts (single-purpose test wrappers, post-hoc output patches, deprecated pre-v13 pipelines, one-off repair/translation utilities) are kept locally for development history but are not included in this repository, to keep the codebase focused on the current, actively-used pipeline.
 
 ## Setup
 

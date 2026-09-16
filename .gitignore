@@ -3,3 +3,12 @@ __pycache__/
 .DS_Store
 *.xlsx
 *.parquet
+
+# Deprecated / one-off scripts kept locally for reference, not part of the portfolio
+104_batch_monthly.py
+104_skills_long.py
+104_skills_wide.py
+104_test_single_file.py
+fix_existing_output.py
+repair_202601_wide.py
+translate_lexicon.py
